@@ -22,3 +22,59 @@ rate: 5%
 10 years
 final balance: 1320.68
 """
+
+TIMES = 0
+
+INVESTMENT = input("Enter Annual investment : ")
+while INVESTMENT != float:
+
+    try:
+        INVESTMENT = float(INVESTMENT)
+        break
+    except:
+        print("Invalid Input")
+        INVESTMENT = input("Enter Annual investment : ")
+    continue
+
+RATE = input("Enter Interest Rate : ")
+while RATE != float:
+
+    try:
+        RATE = float(RATE)
+        break
+    except:
+        print("Invalid Input")
+        RATE = input("Enter Interest Rate : ")
+    continue
+
+RATE = RATE/100
+
+TIME = input("Enter Number of Years : ")
+while TIME != float:
+
+    try:
+        TIME = float(TIME)
+        break
+    except:
+        print("Invalid Input")
+        TIME = input("Enter Number of Years : ")
+    continue
+
+MONEY = INVESTMENT
+
+#while loop
+while TIMES != TIME:
+
+    TIMES = TIMES + 1
+
+    INTEREST = INVESTMENT * RATE
+
+    INVESTMENT = INVESTMENT + INTEREST + MONEY
+
+#fixed it
+INVESTMENT = INVESTMENT - MONEY
+INVESTMENT = round(INVESTMENT,2)
+
+print("In",TIME,"years, you will have",INVESTMENT,"$")
+
+#DONE
